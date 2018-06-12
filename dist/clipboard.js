@@ -1,5 +1,5 @@
 /*!
- * clipboard.js v2.0.0
+ * clipboard.js v2.0.1
  * https://zenorocha.github.io/clipboard.js
  * 
  * Licensed MIT © Zeno Rocha
@@ -170,6 +170,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                 this.target = options.target;
                 this.text = options.text;
                 this.trigger = options.trigger;
+                this.originalEvent = options.originalEvent;
 
                 this.selectedText = '';
             }
@@ -258,7 +259,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                     action: this.action,
                     text: this.selectedText,
                     trigger: this.trigger,
-                    clearSelection: this.clearSelection.bind(this)
+                    clearSelection: this.clearSelection.bind(this),
+                    originalEvent: this.originalEvent
                 });
             }
         }, {
@@ -638,7 +640,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
                     text: this.text(trigger),
                     container: this.container,
                     trigger: trigger,
-                    emitter: this
+                    emitter: this,
+                    originalEvent: e
                 });
             }
         }, {

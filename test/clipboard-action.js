@@ -33,6 +33,7 @@ describe('ClipboardAction', () => {
             assert.property(clip, 'text');
             assert.property(clip, 'trigger');
             assert.property(clip, 'selectedText');
+            assert.property(clip, 'originalEvent');
         });
     });
 
@@ -182,6 +183,7 @@ describe('ClipboardAction', () => {
                 assert.property(e, 'text');
                 assert.property(e, 'trigger');
                 assert.property(e, 'clearSelection');
+                assert.property(e, 'originalEvent');
 
                 done();
             });
@@ -200,6 +202,7 @@ describe('ClipboardAction', () => {
                 assert.property(e, 'action');
                 assert.property(e, 'trigger');
                 assert.property(e, 'clearSelection');
+                assert.property(e, 'originalEvent');
 
                 done();
             });
